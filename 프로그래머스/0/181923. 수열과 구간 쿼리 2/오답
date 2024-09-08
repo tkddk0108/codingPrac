@@ -1,0 +1,15 @@
+for idx in range(s,e+1):
+  if arr[idx] > k:
+  new.append(arr[idx])
+이 부분을
+
+for s in range(e+1):
+  if arr[s] > k:
+  new.append(arr[s])
+이런식으로 사용하니 계속해서 채점이 틀리다는 결과가 나왔다. 
+
+for s in range(e+1) 이런식으로 쿼리를 짜게되면
+s가 queries[i][0] 값을 대체 (s = queries[i][0]) 해버리기 때문에
+s의 범위가 제대로 설정되지 않고 매번 0부터 e+1까지 반복되게 된다.
+-> 쿼리에서 주어진 범위인 s ≤ i ≤ e를 올바르게 처리하지 못하고 있기에 채점에서 오류!
+* 즉, 원래 코드에서 for s in range(e+1)로 인해 s 값이 덮어써지면서, 쿼리의 시작 인덱스와 무관하게 0부터 순회하는 문제
