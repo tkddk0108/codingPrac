@@ -25,7 +25,7 @@ def solution(keymap, targets):
                 total = -1
                 break
             #print(value, total)
-            value = []
+            #value = []
         answer.append(total)
         #print(answer)
         total = 0
