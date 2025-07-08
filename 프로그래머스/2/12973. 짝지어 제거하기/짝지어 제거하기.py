@@ -10,5 +10,3 @@ def solution(s):
             
     if stack== []: return 1
     else: return 0
-
-    return answer
