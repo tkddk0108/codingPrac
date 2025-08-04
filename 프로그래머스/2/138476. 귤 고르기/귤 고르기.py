@@ -1,12 +1,13 @@
 from collections import Counter
 
 def solution(k, tangerine):
-    answer, s = 0, 0
-    a = Counter(tangerine)
-    sort_t = sorted(a.values(),reverse=True)
-
+    answer = 0
+    counter = Counter(tangerine)
+    count = sorted(counter.values(), reverse = True)
+    s = 0
     while k > 0:
-        k -= sort_t[s]
+        k -= count[s]
         answer += 1
         s += 1
+    
     return answer
