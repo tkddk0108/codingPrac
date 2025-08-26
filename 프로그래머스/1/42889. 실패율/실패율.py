@@ -1,12 +1,12 @@
 def solution(N, stages):
     answer = []
-    total = len(stages)
-    fail = dict()
-    for i in range(1, N+1):
-        if stages.count(i) != 0:
-            fail[i] = stages.count(i) / total
+    total = {}
+    for i in range(1,N+1):
+        if i in stages:
+            rate = stages.count(i)/len(stages)
+            total[i] = rate
+            stages = [x for x in stages if x != i]
         else:
-            fail[i] = 0
-        total -= stages.count(i)
-            
-    return sorted(fail, key = lambda x: fail[x], reverse = True)
+            total[i] = 0
+    s_total = sorted(total.items(), key = lambda x:x[1], reverse = True)
+    return [k for k,v in s_total]
