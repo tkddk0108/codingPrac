@@ -1,14 +1,14 @@
 def solution(s):
-    answer = True
-    a = list()
+    li = []
     for i in s:
         if i == "(":
-            a.append(i)
+            li.append(i)
         else:
-            try:
-                a.pop()
+            try: li.pop()
             except IndexError:
                 return False
-            
-    if len(a) == 0: return True
-    else: return False
+    if len(li) == 0:
+        return True
+    else:
+        return False
+
