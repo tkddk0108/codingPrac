@@ -1,4 +1,3 @@
 def solution(n):
-    answer = '수박' * (n//2)
-    if n % 2 == 0: return answer
-    else: return answer + '수' 
+    if n%2 == 0: return "수박"*(n//2)
+    else: return "수박"*(n//2) +"수"
